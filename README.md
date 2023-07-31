@@ -1,1 +1,7 @@
-# AWS-Security
+<h2>Description</h2>
+My Healthy Eating Inc., a Toronto-based company, successfully migrated their data center to AWS cloud. Below is the cloud architecture of their AWS environment.<br><br>
+<img src="https://imgur.com/f67OM6B" height="80%" width="80%" alt=/><br>
+Since the company’s target market is North America, they decided to deploy all resources into two availability zones, us-east-1a and us-east-1b, in the US East (N. Virginia) region. They also choose Route 53 to manage the domain names for their e-Commerce applications and AWS Certificate Manger to maintain their SSL certificates.  The e-Commerce applications have not been re-designed and are still running on top of LAMP (Linux, Apache, MySQL, and PHP) stack. Applications are deployed into two EC2 instances connecting to an EFS system for file sharing. An elastic load balancer (ELB) is in front of the EC2 instances distributing incoming traffic. Applications are also connected to a RDS MySQL instance in the database private subnet. The RDS instance has a standby instance sitting in a separate AZ. All EC2 and RDS instances are deployed in private subnets, connecting through NAT gateways to retrieve software updates from Internet. Finally, S3 is leveraged to store all the data files and a lifecycle policy is in place to move one year old data to S3 Glacier for backup.<br><br>
+As a senior AWS consultant, you are recently hired by the company to help review their architecture and provide a report. In the report, you are required to address following two questions:
+
+https://drive.google.com/file/d/1GhSM4z5JG4NsDA6vIZuAoZ6Bp_HfIkUq/view?usp=sharing
